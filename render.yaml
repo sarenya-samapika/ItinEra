@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: itinera
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false

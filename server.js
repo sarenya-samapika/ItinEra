@@ -249,10 +249,14 @@ app.get('*', (req, res) => {
 // ==============================================================================
 // Start Server
 // ==============================================================================
-app.listen(PORT, () => {
-  console.log(`=======================================================`);
-  console.log(`🌍 ItinEra Server is live at: http://localhost:${PORT}`);
-  console.log(`⚡ Powered by Groq (llama-3.3-70b-versatile)`);
-  console.log(`=======================================================`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`=======================================================`);
+    console.log(`🌍 ItinEra Server is live at: http://localhost:${PORT}`);
+    console.log(`⚡ Powered by Groq (llama-3.3-70b-versatile)`);
+    console.log(`=======================================================`);
+  });
+}
+
+module.exports = app;
 
