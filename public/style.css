@@ -398,13 +398,15 @@ button, input, select, textarea {
   background: var(--primary-light);
 }
 
-.budget-card.active {
+.budget-card.active,
+.budget-card:has(input:checked) {
   border-color: var(--primary);
   background: var(--primary-light);
   box-shadow: 0 0 0 2px var(--primary);
 }
 
-.budget-card.active .budget-title {
+.budget-card.active .budget-title,
+.budget-card:has(input:checked) .budget-title {
   color: var(--primary);
 }
 
@@ -444,7 +446,8 @@ button, input, select, textarea {
   background: var(--primary-light);
 }
 
-.interest-pill.active {
+.interest-pill.active,
+.interest-pill:has(input:checked) {
   background: var(--primary-light);
   border-color: var(--primary);
   color: var(--primary);

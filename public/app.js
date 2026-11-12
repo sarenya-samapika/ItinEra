@@ -144,24 +144,25 @@ function attachEventListeners() {
 
   // Budget card radio selection
   DOM.budgetCards.forEach(card => {
-    card.addEventListener('click', () => {
-      DOM.budgetCards.forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-      const radio = card.querySelector('input[type="radio"]');
-      if (radio) radio.checked = true;
-    });
+    const radio = card.querySelector('input[type="radio"]');
+    if (radio) {
+      radio.addEventListener('change', () => {
+        DOM.budgetCards.forEach(c => {
+          const r = c.querySelector('input[type="radio"]');
+          c.classList.toggle('active', !!(r && r.checked));
+        });
+      });
+    }
   });
 
-  // Interest tags toggle
+  // Interest tags toggle (listens to native checkbox change)
   DOM.interestsContainer.querySelectorAll('.interest-pill').forEach(pill => {
     const checkbox = pill.querySelector('input[type="checkbox"]');
-    pill.addEventListener('click', (e) => {
-      // Toggle if clicked directly on pill
-      if (e.target !== checkbox) {
-        checkbox.checked = !checkbox.checked;
-      }
-      pill.classList.toggle('active', checkbox.checked);
-    });
+    if (checkbox) {
+      checkbox.addEventListener('change', () => {
+        pill.classList.toggle('active', checkbox.checked);
+      });
+    }
   });
 
   // Form submission
