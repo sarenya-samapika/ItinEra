@@ -93,20 +93,9 @@ http://localhost:3000
 
 ## Deploy to the Cloud (Live Website Link)
 
-You can deploy ItinEra as a live, publicly accessible website for free using either Render or Vercel:
+You can deploy ItinEra as a live, publicly accessible website for free using Vercel:
 
-### Option A: Render (Recommended for Node/Express)
-1. Go to **[Render Dashboard](https://dashboard.render.com/)** and sign in with GitHub.
-2. Click **New +** > **Web Service**.
-3. Select your repository: `sarenya-samapika/ItinEra`.
-4. Configure settings:
-   - **Environment**: `Node`
-   - **Build Command**: `npm install`
-   - **Start Command**: `node server.js`
-   - **Environment Variables**: Add `GROQ_API_KEY` with your key.
-5. Click **Create Web Service**. Your live site will be ready at `https://itinera-xxxx.onrender.com`.
-
-### Option B: Vercel
+### Vercel
 1. Go to **[Vercel New Project](https://vercel.com/new)** and sign in with GitHub.
 2. Click **Import** next to `sarenya-samapika/ItinEra`.
 3. In **Environment Variables**, add `GROQ_API_KEY`.
